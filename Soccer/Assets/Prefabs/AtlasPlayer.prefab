@@ -564,9 +564,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1458489338110389262}
   - component: {fileID: 2693994234641751254}
+  - component: {fileID: 802809833}
+  - component: {fileID: 802809834}
+  - component: {fileID: 802809835}
+  - component: {fileID: 802809829}
+  - component: {fileID: 802809832}
   m_Layer: 0
   m_Name: AtlasPlayer
-  m_TagString: Untagged
+  m_TagString: AtlasPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -612,6 +617,72 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &802809833
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2267079725710309044}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3410393, y: 0.53614426, z: 0.28015924}
+  m_Center: {x: -0.00071567297, y: 1.2327838, z: -0.0054615736}
+--- !u!136 &802809834
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2267079725710309044}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.086404905
+  m_Height: 0.94576323
+  m_Direction: 1
+  m_Center: {x: -0.10693888, y: 0.4665087, z: 0.012299806}
+--- !u!136 &802809835
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2267079725710309044}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.09321699
+  m_Height: 0.94576323
+  m_Direction: 1
+  m_Center: {x: 0.10273722, y: 0.4665087, z: 0.012299798}
+--- !u!114 &802809829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2267079725710309044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141947f97a19b5e43b11365859ba00ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &802809832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2267079725710309044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba1e79e2cdd06b849acb404904b814fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AtlasMind: {fileID: 0}
 --- !u!1 &2298662632052739155
 GameObject:
   m_ObjectHideFlags: 0
