@@ -9,9 +9,13 @@ public class Player : MonoBehaviour
     public Transform height;
     public Transform target;
     public Transform origin;
+    public Vector3 moveInput;
 
-    public float speed;
+    public float runSpeed;
+    public float walkSpeed;
+    public float rotationSpeed;
     public float shootStrength;
+    public float gravityScale;
     public bool hasBall;
 }
 
@@ -21,6 +25,6 @@ public interface IPLayer
     void Move();
     void Slide();
     void Pass();
-
+    void Idle();
 }
 
