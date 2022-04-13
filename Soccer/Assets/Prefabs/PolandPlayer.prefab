@@ -334,6 +334,64 @@ Transform:
   m_Father: {fileID: 8178311573302489796}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1400518095642530894
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4519927803241890755}
+  - component: {fileID: 6645782211050833304}
+  - component: {fileID: 2792964803204420893}
+  m_Layer: 0
+  m_Name: FeetCollider
+  m_TagString: PolandFeet
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4519927803241890755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400518095642530894}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.065, z: 0.319}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_Children: []
+  m_Father: {fileID: 3432397712487236049}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6645782211050833304
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400518095642530894}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25653744, y: 0.102644764, z: 0.2126296}
+  m_Center: {x: -0.005402796, y: 0.0034197979, z: 0.056314804}
+--- !u!114 &2792964803204420893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400518095642530894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e346d5bd6303f4eb76993945299a3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  polandPlayer: {fileID: 2659801246488730475}
 --- !u!1 &1501019366990386629
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,6 +674,7 @@ Transform:
   - {fileID: 3363198487801214083}
   - {fileID: 7246158976668564501}
   - {fileID: 1433231916998551079}
+  - {fileID: 4519927803241890755}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
