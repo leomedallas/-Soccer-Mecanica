@@ -5,12 +5,21 @@ using UnityEngine;
 public class PolandFeet : MonoBehaviour
 {
     public GameObject polandPlayer;
-
+    public Ball ball;
+    public Player player;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Ball"))
         {
-            other.transform.parent = polandPlayer.transform;
+            if (ball.PlayerHasBall && player.playerSliding == false)
+            {
+
+            }
+            else if (player.playerSliding || ball.PlayerHasBall == false)
+            {
+                other.transform.parent = polandPlayer.transform;
+                ball.PlayerHasBall = true;
+            }
         }
     }
 }

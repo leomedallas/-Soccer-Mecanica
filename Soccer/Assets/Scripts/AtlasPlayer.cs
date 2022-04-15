@@ -30,10 +30,6 @@ public class AtlasPlayer : Player, IPLayer
         }
     }
 
-    public void Shoot()
-    {
-
-    }
 
     public void Move()
     {
@@ -50,11 +46,23 @@ public class AtlasPlayer : Player, IPLayer
                 Idle();
             }
 
-            if (Input.GetButton("Sprint"))
+            if (Input.GetButton("Sprint") && stopMove == false)
             {
                 anim.SetBool("FastRunning", true);
                 transform.Translate(moveInput * runSpeed, Space.World);
                 controller.Move(moveInput * runSpeed * Time.deltaTime);
+            }
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Slide();
+            }
+            else if (Input.GetMouseButtonDown(0))
+            {
+                Shoot();
+            }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                Pass();
             }
             else
             {
@@ -62,8 +70,7 @@ public class AtlasPlayer : Player, IPLayer
                 transform.Translate(moveInput * walkSpeed, Space.World);
                 controller.Move(moveInput * walkSpeed * Time.deltaTime);
             }
-
-            if(moveInput != Vector3.zero)
+            if(moveInput != Vector3.zero && stopMove == false)
             {
                 Quaternion toRotation = Quaternion.LookRotation(moveInput, Vector3.up);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed);
@@ -71,17 +78,43 @@ public class AtlasPlayer : Player, IPLayer
         }
 
         moveInput.y += gravityScale * Time.deltaTime;
-        controller.Move(moveInput * Time.deltaTime);
+        if (stopMove == false)
+        {
+            controller.Move(moveInput * Time.deltaTime);
+        }
+    }
+    public void Shoot()
+    {
+        stopMove = true;
+        StartCoroutine("StopMove");
+        ball.PlayerHasBall = false;
+        anim.SetTrigger("Throw");
     }
 
     public void Slide()
     {
-
+        anim.SetTrigger("Slide");
+        playerSliding = true;
+        StartCoroutine("Sliding");
     }
 
     public void Pass()
     {
+        stopMove = true;
+        StartCoroutine("StopMove");
+        ball.PlayerHasBall = false;
+        anim.SetTrigger("Pass");
+    }
 
+    IEnumerator Sliding()
+    {
+        yield return new WaitForSeconds(1f);
+        playerSliding = false;
+    }
+    IEnumerator StopMove()
+    {
+        yield return new WaitForSeconds(1f);
+        stopMove = false;
     }
 }
 

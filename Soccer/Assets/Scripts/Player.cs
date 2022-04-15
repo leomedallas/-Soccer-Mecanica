@@ -17,6 +17,12 @@ public class Player : MonoBehaviour
     public float shootStrength;
     public float gravityScale;
     public bool hasBall;
+    public bool playerSliding;
+    public bool stopMove;
+    public Ball ball;
+
+    public bool PlayerSliding { get => playerSliding; set => playerSliding = value; }
+
 }
 
 public interface IPLayer
