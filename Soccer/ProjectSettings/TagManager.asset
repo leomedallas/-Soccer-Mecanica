@@ -8,6 +8,9 @@ TagManager:
   - PolandPlayer
   - PolandGoal
   - AtlasGoal
+  - PolandFeet
+  - AtlasFeet
+  - Ball
   layers:
   - Default
   - TransparentFX
