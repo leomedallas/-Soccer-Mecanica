@@ -37,7 +37,7 @@ public class PolandPlayer : Player, IPLayer
 
         if (controller.isGrounded)
         {
-            moveInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+            moveInput = new Vector3(Input.GetAxis("Horizontal2"), 0f, Input.GetAxis("Vertical2"));
             moveInput = Vector3.ClampMagnitude(moveInput, 1f);
             moveInput.Normalize();
 
@@ -46,21 +46,21 @@ public class PolandPlayer : Player, IPLayer
                 Idle();
             }
 
-            if (Input.GetButton("Sprint") && stopMove == false)
+            if (Input.GetButton("Sprint2") && stopMove == false)
             {
                 anim.SetBool("FastRunning", true);
                 transform.Translate(moveInput * runSpeed, Space.World);
                 controller.Move(moveInput * runSpeed * Time.deltaTime);
             }
-            else if (Input.GetKeyDown(KeyCode.Space))
+            else if (Input.GetButtonDown("Slide2"))
             {
                 Slide();
             }
-            else if (Input.GetMouseButtonDown(0))
+            else if (Input.GetButtonDown("Shoot2"))
             {
                 Shoot();
             }
-            else if (Input.GetMouseButtonDown(1))
+            else if (Input.GetButtonDown("Pass2"))
             {
                 Pass();
             }
@@ -70,6 +70,7 @@ public class PolandPlayer : Player, IPLayer
                 transform.Translate(moveInput * walkSpeed, Space.World);
                 controller.Move(moveInput * walkSpeed * Time.deltaTime);
             }
+
             if (moveInput != Vector3.zero && stopMove == false)
             {
                 Quaternion toRotation = Quaternion.LookRotation(moveInput, Vector3.up);
@@ -83,6 +84,7 @@ public class PolandPlayer : Player, IPLayer
             controller.Move(moveInput * Time.deltaTime);
         }
     }
+
     public void Shoot()
     {
         stopMove = true;
@@ -111,12 +113,10 @@ public class PolandPlayer : Player, IPLayer
         yield return new WaitForSeconds(1f);
         playerSliding = false;
     }
+
     IEnumerator StopMove()
     {
         yield return new WaitForSeconds(1f);
         stopMove = false;
     }
 }
-
-
-

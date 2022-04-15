@@ -52,15 +52,15 @@ public class AtlasPlayer : Player, IPLayer
                 transform.Translate(moveInput * runSpeed, Space.World);
                 controller.Move(moveInput * runSpeed * Time.deltaTime);
             }
-            else if (Input.GetKeyDown(KeyCode.Space))
+            else if (Input.GetButtonDown("Slide"))
             {
                 Slide();
             }
-            else if (Input.GetMouseButtonDown(0))
+            else if (Input.GetButtonDown("Shoot"))
             {
                 Shoot();
             }
-            else if (Input.GetMouseButtonDown(1))
+            else if (Input.GetButtonDown("Pass"))
             {
                 Pass();
             }
@@ -70,6 +70,7 @@ public class AtlasPlayer : Player, IPLayer
                 transform.Translate(moveInput * walkSpeed, Space.World);
                 controller.Move(moveInput * walkSpeed * Time.deltaTime);
             }
+
             if(moveInput != Vector3.zero && stopMove == false)
             {
                 Quaternion toRotation = Quaternion.LookRotation(moveInput, Vector3.up);
@@ -83,6 +84,7 @@ public class AtlasPlayer : Player, IPLayer
             controller.Move(moveInput * Time.deltaTime);
         }
     }
+
     public void Shoot()
     {
         stopMove = true;
@@ -111,12 +113,10 @@ public class AtlasPlayer : Player, IPLayer
         yield return new WaitForSeconds(1f);
         playerSliding = false;
     }
+
     IEnumerator StopMove()
     {
         yield return new WaitForSeconds(1f);
         stopMove = false;
     }
 }
-
-
-
