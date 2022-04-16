@@ -2170,38 +2170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141947f97a19b5e43b11365859ba00ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2087784691 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2659801246488730475, guid: 1a3f0c60c085bb940b1d687db36356ec, type: 3}
-  m_PrefabInstance: {fileID: 16291179067456051}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2087784692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2087784691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f22708a53b55d3549950e3cfff53ed9a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: {fileID: 0}
-  anim: {fileID: 0}
-  height: {fileID: 0}
-  target: {fileID: 0}
-  origin: {fileID: 0}
-  moveInput: {x: 0, y: 0, z: 0}
-  runSpeed: 0
-  walkSpeed: 0
-  rotationSpeed: 0
-  shootStrength: 0
-  gravityScale: 0
-  hasBall: 0
-  playerSliding: 0
-  stopMove: 0
-  ball: {fileID: 1364659}
 --- !u!1001 &16291179067456051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2209,22 +2177,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2087784692, guid: 1a3f0c60c085bb940b1d687db36356ec, type: 3}
+      propertyPath: ball
+      value: 
+      objectReference: {fileID: 1364659}
+    - target: {fileID: 2087784692, guid: 1a3f0c60c085bb940b1d687db36356ec, type: 3}
+      propertyPath: runSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2087784692, guid: 1a3f0c60c085bb940b1d687db36356ec, type: 3}
+      propertyPath: walkSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2659801246488730475, guid: 1a3f0c60c085bb940b1d687db36356ec, type: 3}
       propertyPath: m_Name
       value: PolandPlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 2659801246488730475, guid: 1a3f0c60c085bb940b1d687db36356ec, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2792964803204420893, guid: 1a3f0c60c085bb940b1d687db36356ec, type: 3}
       propertyPath: ball
       value: 
       objectReference: {fileID: 1364659}
-    - target: {fileID: 2792964803204420893, guid: 1a3f0c60c085bb940b1d687db36356ec, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2087784692}
     - target: {fileID: 3432397712487236049, guid: 1a3f0c60c085bb940b1d687db36356ec, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2269,10 +2241,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5183975506896504279, guid: 1a3f0c60c085bb940b1d687db36356ec, type: 3}
-      propertyPath: m_Avatar
-      value: 
-      objectReference: {fileID: 9000000, guid: 0323241edaf00e944aa125847066686c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a3f0c60c085bb940b1d687db36356ec, type: 3}
 --- !u!23 &567525746936649284

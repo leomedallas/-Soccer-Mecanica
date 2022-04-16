@@ -89,6 +89,8 @@ public class PolandPlayer : Player, IPLayer
     {
         stopMove = true;
         StartCoroutine("StopMove");
+        ball.transform.parent = null;
+        Lanzar();
         ball.PlayerHasBall = false;
         anim.SetTrigger("Throw");
     }
@@ -104,6 +106,8 @@ public class PolandPlayer : Player, IPLayer
     {
         stopMove = true;
         StartCoroutine("StopMove");
+        ball.transform.parent = null;
+        Lanzar2();
         ball.PlayerHasBall = false;
         anim.SetTrigger("Pass");
     }
@@ -118,5 +122,46 @@ public class PolandPlayer : Player, IPLayer
     {
         yield return new WaitForSeconds(1f);
         stopMove = false;
+    }
+
+    void Lanzar()
+    {
+        Rigidbody ballRB = ball.GetComponent<Rigidbody>();
+        Physics.gravity = Vector3.up * gravityScale;
+        ballRB.useGravity = true;
+        ballRB.velocity = CalcularVelocidadInicial();
+        print(ballRB.velocity);
+
+    }
+    Vector3 CalcularVelocidadInicial()
+    {
+        Vector3 desplazamientoP = ball.transform.position - target.position;
+
+        float velocidadY, velocidadX, velocidadZ;
+        velocidadY = Mathf.Sqrt(-2 * gravityScale * height.position.y);
+        velocidadX = desplazamientoP.x / ((-velocidadY / gravityScale) + (Mathf.Sqrt(2 * (desplazamientoP.y - height.position.y) / gravityScale)));
+        velocidadZ = desplazamientoP.z / ((-velocidadY / gravityScale) + (Mathf.Sqrt(2 * (desplazamientoP.y - height.position.y) / gravityScale)));
+
+        return new Vector3(-velocidadX, velocidadY, -velocidadZ);
+    }
+    void Lanzar2()
+    {
+        Rigidbody ballRB = ball.GetComponent<Rigidbody>();
+        Physics.gravity = Vector3.up * gravityScale;
+        ballRB.useGravity = true;
+        ballRB.velocity = CalcularVelocidadInicial();
+        print(ballRB.velocity);
+
+    }
+    Vector3 CalcularVelocidadInicial2()
+    {
+        Vector3 desplazamientoP = ball.transform.position - target2.position;
+
+        float velocidadY, velocidadX, velocidadZ;
+        velocidadY = Mathf.Sqrt(-2 * gravityScale * height2.position.y);
+        velocidadX = desplazamientoP.x / ((-velocidadY / gravityScale) + (Mathf.Sqrt(2 * (desplazamientoP.y - height2.position.y) / gravityScale)));
+        velocidadZ = desplazamientoP.z / ((-velocidadY / gravityScale) + (Mathf.Sqrt(2 * (desplazamientoP.y - height2.position.y) / gravityScale)));
+
+        return new Vector3(-velocidadX, velocidadY, -velocidadZ);
     }
 }

@@ -7,7 +7,9 @@ public class Player : MonoBehaviour
     public CharacterController controller;
     public Animator anim;
     public Transform height;
+    public Transform height2;
     public Transform target;
+    public Transform target2;
     public Transform origin;
     public Vector3 moveInput;
 
