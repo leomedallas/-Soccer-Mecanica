@@ -160,15 +160,4 @@ public class AtlasPlayer : Player, IPLayer
         print(ballRB.velocity);
 
     }
-    Vector3 CalcularVelocidadInicial2()
-    {
-        Vector3 desplazamientoP = ball.transform.position - target2.position;
-
-        float velocidadY, velocidadX, velocidadZ;
-        velocidadY = Mathf.Sqrt(-2 * gravityScale * height2.position.y);
-        velocidadX = desplazamientoP.x / ((-velocidadY / gravityScale) + (Mathf.Sqrt(2 * (desplazamientoP.y - height2.position.y) / gravityScale)));
-        velocidadZ = desplazamientoP.z / ((-velocidadY / gravityScale) + (Mathf.Sqrt(2 * (desplazamientoP.y - height2.position.y) / gravityScale)));
-
-        return new Vector3(-velocidadX, velocidadY, -velocidadZ);
-    }
 }

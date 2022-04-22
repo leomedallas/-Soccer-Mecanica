@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Soccer.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: a24b9efdbcce4c24dba46de4d71cd707
+  - enabled: 1
+    path: Assets/Scenes/AtlasWin.unity
+    guid: ce8f0555a5bd4454ebd3c7838ad33a3d
+  - enabled: 1
+    path: Assets/Scenes/Controls.unity
+    guid: c590602d7a897ec4b89c56487083de0f
+  - enabled: 1
+    path: Assets/Scenes/PolandWin.unity
+    guid: bed6c019ad82cc3488053b39b23328a6
   m_configObjects: {}

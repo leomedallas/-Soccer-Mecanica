@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Goal : MonoBehaviour
 {
@@ -26,11 +27,19 @@ public class Goal : MonoBehaviour
       {
         scorePlayer1++;
         uiScorePlayer1.text = "Atlas -" + scorePlayer1.ToString();
+        if(scorePlayer1 == 10)
+        {
+          SceneManager.LoadScene(2);
+        }
       }
       else
       {
         scorePlayer2++;
         uiScorePlayer2.text = scorePlayer2.ToString() + " - Poland";
+        if (scorePlayer2 == 10)
+        {
+          SceneManager.LoadScene(4);
+        }
       }
       ball.transform.parent = null;
       ball.transform.position = positionBall.position;
