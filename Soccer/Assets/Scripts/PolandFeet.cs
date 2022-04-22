@@ -7,6 +7,7 @@ public class PolandFeet : MonoBehaviour
     public GameObject polandPlayer;
     public Ball ball;
     public Player player;
+    public Player otherPlayer;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Ball"))
@@ -18,7 +19,8 @@ public class PolandFeet : MonoBehaviour
             else if (player.playerSliding || ball.PlayerHasBall == false)
             {
                 other.transform.parent = polandPlayer.transform;
-                ball.PlayerHasBall = true;
+                player.hasBall = true;
+                otherPlayer.hasBall = false;
             }
         }
     }

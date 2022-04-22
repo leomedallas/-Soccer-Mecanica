@@ -30,7 +30,6 @@ public class AtlasPlayer : Player, IPLayer
         }
     }
 
-
     public void Move()
     {
         anim.SetBool("SlowRunning", true);
@@ -58,11 +57,19 @@ public class AtlasPlayer : Player, IPLayer
             }
             else if (Input.GetButtonDown("Shoot"))
             {
-                Shoot();
+                if (hasBall == true)
+                {
+                    hasBall = false;
+                    Shoot();
+                };
             }
             else if (Input.GetButtonDown("Pass"))
             {
-                Pass();
+                if (hasBall == true)
+                {
+                    hasBall = false;
+                    Pass();
+                };
             }
             else
             {

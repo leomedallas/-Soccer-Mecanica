@@ -7,9 +7,10 @@ public class AtlasFeet : MonoBehaviour
     public GameObject atlasPlayer;
     public Ball ball;
     public Player player;
+    public Player otherPlayer;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Ball"))
+        if (other.gameObject.CompareTag("Ball"))
         {
             if (ball.PlayerHasBall && player.playerSliding == false)
             {
@@ -18,7 +19,8 @@ public class AtlasFeet : MonoBehaviour
             else if (player.playerSliding|| ball.PlayerHasBall == false)
             {
                 other.transform.parent = atlasPlayer.transform;
-                ball.PlayerHasBall = true;
+                player.hasBall = true;
+                otherPlayer.hasBall = false;
             }
         }
     }

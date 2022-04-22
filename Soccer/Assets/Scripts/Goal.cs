@@ -32,9 +32,8 @@ public class Goal : MonoBehaviour
         scorePlayer2++;
         uiScorePlayer2.text = scorePlayer2.ToString() + " - Poland";
       }
+      ball.transform.parent = null;
       ball.transform.position = positionBall.position;
-      player1.transform.position = positionPlayer1.position;
-      player2.transform.position = positionPlayer2.position;
     }
   }
 }

@@ -58,11 +58,19 @@ public class PolandPlayer : Player, IPLayer
             }
             else if (Input.GetButtonDown("Shoot2"))
             {
-                Shoot();
+                if (hasBall == true)
+                {
+                    hasBall = false;
+                    Shoot();
+                };
             }
             else if (Input.GetButtonDown("Pass2"))
             {
-                Pass();
+                if (hasBall == true)
+                {
+                    hasBall = false;
+                    Pass();
+                };
             }
             else
             {
